@@ -1,0 +1,155 @@
+.label-text
+	font-family: 'source sans pro'
+	font-size: 60%
+	margin-top: 4px
+	margin-bottom: 4px
+
+.dietary-badge
+	white-space: nowrap
+	width: 100%
+
+.macros > h2::after,
+.groceries > h2::after
+	content: "v"
+	color: rgba(0,0,0,0.0)
+	width: 26px
+	height: 26px
+	position: absolute
+	right: 20px
+	background-image: url("../ui_icons/open_menu.svg")
+	background-position: center center
+	background-size: contain
+	background-repeat: no-repeat
+	transform: rotateZ(90deg)
+
+.macros-expander
+	position: absolute
+	z-index: 100
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+
+.dietary-badges
+	padding-left: 10px
+	border-left: 3px solid black
+	margin-left: 10px
+	font-family: 'reem kufi'
+	font-size: 90%
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	align-items: space-between
+
+.macros
+	position: relative
+	padding-left: 20px
+
+.macros:hover
+	cursor: pointer
+
+.macros.collapsed > .macros-expander
+	height: 0
+	overflow: hidden
+
+.macros:not(.collapsed) > .macros-expander
+	border: 3px solid black
+	background-color: white
+	padding: 10px
+	border-radius: 5px
+
+.macros,
+.groceries
+	width: 240px
+	@media screen and (max-device-width: $break-mobile)
+		width: 340px
+
+.groceries
+	position: relative
+	width: 260px
+	padding-right: 20px
+	z-index: 99
+	@media screen and (max-device-width: $break-mobile)
+		width: 340px
+
+.groceries:hover
+	cursor: pointer
+
+.grocery-expander
+	position: absolute
+	font-size: 82%
+	width: calc(100% - 20px)
+
+.groceries.collapsed > .grocery-expander
+	height: 0
+	overflow: hidden
+
+.groceries:not(.collapsed) > .grocery-expander
+	border: 3px solid black
+	background-color: white
+	padding: 8px
+	border-radius: 5px
+
+.grocery-list *
+	font-family: 'source sans pro'
+
+.grocery-list h4
+	font-weight: 700
+	font-size: 110%
+
+.grocery-list > .grocery-list-section:not(:first-child)
+	margin-top: 8px
+
+.grocery-list-material
+	display: flex
+	flex-direction: row
+
+.grocery-list-material-component
+	display: inline-block
+
+.grocery-list-material-component.amount
+	align-self: center
+	flex: 0 0 30px
+	width: 30px
+	@media screen and (max-device-width: $break-mobile)
+		flex: 0 0 60px
+		width: 60px
+
+.grocery-list-material-component.measure
+	margin-left: 4px
+	align-self: center
+	flex: 0 0 40px
+	width: 40px
+	@media screen and (max-device-width: $break-mobile)
+		margin-left: 8px
+		flex: 0 0 80px
+		width: 80px
+
+.text-groceries
+	width: 100%
+	font-family: 'reem kufi'
+	@media screen and (max-device-width: $break-mobile)
+		height: 60px
+		font-size: 100%
+
+.grocery-list-material-component.ingredient
+	margin-left: 4px
+	@media screen and (max-device-width: $break-mobile)
+		margin-left: 8px
+
+.macro-data-text
+	display: inline
+
+.macro-data-input
+	width: 75px
+	font-size: 100%
+	@media screen and (max-device-width: $break-mobile)
+		width: 150px
+
+.macro-wrapper *
+	font-family: 'reem kufi'
+
+.macro-data-mini-text
+	font-size: 60%
+
+.macro-data-wrapper
+	white-space: nowrap

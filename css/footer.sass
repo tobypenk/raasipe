@@ -1,0 +1,96 @@
+.footer
+	width: 100%
+	height: $header-height * 2
+	background-color: white
+	border-top: 4px solid $ui-color-blue
+	font-family: 'reem kufi'
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding-left: 40px
+	padding-right: 40px
+	z-index: 10000
+	position: absolute
+	bottom: 0
+	@media screen and (max-device-width: $break-mobile)
+		height: $header-height-mobile * 2
+		border-top: 8px solid $ui-color-blue
+		padding-left: 80px
+		padding-right: 80px
+
+.main-content
+	position: relative
+	padding-bottom: $header-height * 2 + 20px
+	min-height: calc(100% + #{$header-height + 20px})
+	@media screen and (max-device-width: $break-mobile)
+		padding-bottom: $header-height-mobile * 2 + 40px
+		min-height: 100%
+
+.footer-section
+	display: flex
+	justify-content: space-between
+
+.footer-section.logo-section
+	font-size: 140%
+	@media screen and (max-device-width: $break-mobile)
+		width: 25%
+		font-size: 120%
+
+.footer-section.footer-links
+	width: 240px
+	@media screen and (max-device-width: $break-mobile)
+		width: 40%
+
+.footer-section.footer-links > a
+	color: black
+
+
+.footer-section.logo-section > p
+	display: inline
+
+.footer-logo
+	background-image: url("../ui_icons/raasipe.svg")
+	background-size: contain
+	background-position: center center
+	background-repeat: no-repeat
+	width: 40px
+	height: 40px
+	margin-right: 20px
+	@media screen and (max-device-width: $break-mobile)
+		width: 70px
+		height: 70px
+		margin-right: 40px
+
+.social-icon
+	width: 30px
+	height: 30px
+	background-size: contain
+	background-position: center center
+	background-repeat: no-repeat
+	background-image: url("../ui_icons/raasipe.svg")
+	@media screen and (max-device-width: $break-mobile)
+		width: 40px
+		height: 40px
+
+.social-icon:not(:first-child)
+	margin-left: 60px
+
+.social-icon.instagram
+	background-image: url("../ui_icons/instagram.svg")
+
+.social-icon.facebook
+	background-image: url("../ui_icons/facebook.svg")
+
+.social-icon.twitter
+	background-image: url("../ui_icons/twitter.svg")
+
+
+
+
+
+
+
+
+
+
+

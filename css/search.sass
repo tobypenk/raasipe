@@ -1,0 +1,201 @@
+.search-result-macros
+	width: 200px
+	height: 20px
+	flex-wrap: nowrap
+	display: flex
+	color: white
+	text-align: center
+	@media screen and (max-device-width: $break-mobile)
+		width: 300px
+		height: 40px
+
+.search-result-header .search-result-macros
+	height: 26px
+	@media screen and (max-device-width: $break-mobile)
+		height: 52px
+
+.search-result-title
+	width: calc(100% - 200px - 180px - 40px)
+	@media screen and (max-device-width: $break-mobile)
+		width: calc(33% - 17px)
+
+.search-result-calories
+	width: 180px
+
+.search-result
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	margin-top: 4px
+	color: black
+	@media screen and (max-device-width: $break-mobile)
+		margin-top: 8px
+
+.search-result-macros > p
+	display: inline
+
+.macros-slider
+	height: 100%
+	display: inline-block
+
+.macros-slider.desc
+	border-top: 4px solid $ui-color-blue
+
+.macros-slider.asc
+	border-bottom: 4px solid $ui-color-blue
+	
+.search-result-header .macros-slider:hover
+	cursor: pointer
+
+.macros-slider.protein
+	background-color: crimson
+
+.macros-slider.fat
+	background-color: rgb(230,200,20)
+
+.macros-slider.carbs
+	background-color: brown
+
+.macros-slider.null
+	background-color: grey
+
+.search-results,
+.saved-recipes,
+.search-ui,
+.requirements-holder
+	width: $recipe-width
+	margin-left: 50%
+	transform: translateX(-50%)
+	font-family: "reem kufi"
+	@media screen and (max-device-width: $break-mobile)
+		width: $recipe-width-mobile
+
+.search-result-header
+	margin-bottom: 4px
+	border-bottom: 4px solid $ui-color-blue
+	height: 34px
+	@media screen and (max-device-width: $break-mobile)
+		margin-bottom: 8px
+		border-bottom: 8px solid $ui-color-blue
+		height: 68px
+
+.returned-results
+	max-height: 400px
+	overflow-y: scroll
+	border-bottom: 1px solid rgba(0,0,0,0.15)
+	@media screen and (max-device-width: $break-mobile)
+		max-height: 500px
+		border-bottom: 2px solid rgba(0,0,0,0.15)
+		
+.dietary-ui,
+.course-ui
+	width: 100%
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	justify-content: space-between
+	
+.search-string-ui
+	width: 300px
+	height: 30px
+	font-size: 100%
+	padding-left: 5px
+	font-family: 'source sans pro'
+	@media screen and (max-device-width: $break-mobile)
+		width: 400px
+		height: 60px
+		padding-left: 10px
+	
+.search-ui-header,
+.dietary-ui,
+.course-ui,
+.saved-recipes
+	margin-bottom: 10px
+	border-bottom: 1px solid $ui-color-blue
+	padding-bottom: 10px
+	@media screen and (max-device-width: $break-mobile)
+		margin-bottom: 20px
+		border-bottom: 2px solid $ui-color-blue
+		padding-bottom: 20px
+	
+
+.search-ui-header
+	display: flex
+	justify-content: space-between
+	flex-wrap: nowrap
+	align-items: center
+
+.search-loading-ui.loading
+	height: 30px
+	width: 180px
+	background-image: url("../ui_icons/loading_wide.svg")
+	background-size: contain
+	background-position: center center
+	background-repeat: no-repeat
+	@media screen and (max-device-width: $break-mobile)
+		height: 60px
+		width: 240px
+
+
+.builder-checkbox
+	width: 20px
+	margin-left: 10px
+	margin-right: 10px
+	@media screen and (max-device-width: $break-mobile)
+		width: 51px
+		margin-left: 25px
+		margin-right: 25px
+	
+.builder-checkbox:not(.header-checkbox)
+	height: 20px
+	border: 1px solid black
+	border-radius: 3px
+	align-self: center
+	@media screen and (max-device-width: $break-mobile)
+		height: 51px
+		border: 2px solid black
+		border-radius: 6px
+
+.builder-checkbox:not(.header-checkbox).checked
+	background-color: $ui-color-blue
+
+.requirements-holder
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	justify-content: space-between
+	margin-top: 20px
+	@media screen and (max-device-width: $break-mobile)
+		margin-top: 40px
+	
+.requirements-holder > .list-holder
+	width: 46%
+
+.equipment-list-holder
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	align-items: flex-start
+	align-content: flex-start
+	
+.equipment-list-holder,
+.grocery-list-holder
+	margin-top: 10px
+	@media screen and (max-device-width: $break-mobile)
+		margin-top: 20px
+	
+.equipment-list-holder > a
+	width: 100%
+	color: $ui-color-blue
+
+.equipment-list-holder
+	font-family: 'source sans pro'
+
+.hidable-sibling
+	font-style: italic
+	font-family: 'source sans pro'
+	
+div:not(:empty) ~ .hidable-sibling
+	display: none
+	
+	

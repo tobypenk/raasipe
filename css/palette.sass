@@ -1,0 +1,81 @@
+.palette
+	width: 600px
+	@media screen and (max-device-width: 480px)
+		width: 90%
+		font-size: 80%
+        
+svg.genetic-svg
+	@media screen and (max-device-width: 480px)
+		font-size: 65%
+
+.dendrogram-header
+	display: flex
+	justify-content: space-between
+	font-family: source sans pro
+	font-weight: 700
+	text-decoration: italic
+	margin-bottom: 10px
+	margin-top: 20px
+	
+.dendrogram-header > p
+	width: 100%
+	text-align: center
+	
+.dendrogram-background
+	width: 800px
+	background-color: rgba(0,0,0,0.05)
+	position: absolute
+	display: flex
+	justify-content: space-between
+	pointer-events: none
+	
+.dendrogram-column:not(:last-child)
+	border-right: 4px dashed rgba(0,0,0,0.2)
+	
+	
+.palette-loading
+	width: 150px
+	height: 40px
+	background-size: contain
+	background-position: center center
+	background-repeat: no-repeat
+	margin-left: 20px
+	margin-top: 20px
+	
+.palette-search-wrapper
+	display: flex
+	flex-direction: row
+	align-items: center
+	justify-content: space-between
+	flex-wrap: nowrap
+	
+.palette-loading.loading
+	background-image: url("../ui_icons/loading_wide.svg")
+	
+	
+$first-col-width: 11%
+$mid-col-width: 17.5%
+$last-col-width: 100% - $first-col-width - 3*$mid-col-width
+	
+.dendrogram-column:first-child,
+.dendrogram-header > p:first-child
+	width: $first-col-width
+	
+.dendrogram-column:nth-child(2),
+.dendrogram-column:nth-child(3),
+.dendrogram-column:nth-child(4),
+.dendrogram-header > p:nth-child(2),
+.dendrogram-header > p:nth-child(3),
+.dendrogram-header > p:nth-child(4)
+	width: $mid-col-width
+
+	
+	
+.dendrogram-column:last-child,
+.dendrogram-header > p:last-child
+	width: $last-col-width
+
+.dendrogram-column
+	height: 100%
+	width: 20%
+	box-sizing: border-box

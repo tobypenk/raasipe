@@ -1,0 +1,193 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.body-expander {
+  width: 100%;
+  height: calc(100% - 84px);
+}
+
+.cookie-permission-wrapper,
+.create-new-grocery-list,
+.grocery-list {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  font-family: "source sans pro";
+  background-color: white;
+  border: 4px solid black;
+  border-radius: 5px;
+  padding: 18px;
+}
+@media screen and (max-device-width: 480px) {
+  .cookie-permission-wrapper,
+.create-new-grocery-list,
+.grocery-list {
+    font-size: 200%;
+  }
+}
+
+.cookie-permission-wrapper {
+  width: 300px;
+  height: 309;
+  margin-bottom: 20px;
+}
+@media screen and (max-device-width: 480px) {
+  .cookie-permission-wrapper {
+    width: 90%;
+    margin-bottom: 40px;
+  }
+}
+
+.grocery-list {
+  width: 300px;
+}
+@media screen and (max-device-width: 480px) {
+  .grocery-list {
+    width: 90%;
+  }
+}
+
+.grocery-list-title {
+  width: 100%;
+  font-weight: bold;
+  font-size: 160%;
+}
+
+.add-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+@media screen and (max-device-width: 480px) {
+  .add-item {
+    font-size: 50%;
+  }
+}
+
+.remove-item {
+  background-image: url("../grocery_list/x.svg");
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 8px;
+}
+
+.list-item {
+  margin-top: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.list-items {
+  max-height: 400px;
+  overflow-y: scroll;
+}
+@media screen and (max-device-width: 480px) {
+  .list-items {
+    max-height: 800px;
+  }
+}
+
+.remove-item {
+  width: 20px;
+  height: 20px;
+}
+@media screen and (max-device-width: 480px) {
+  .remove-item {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media screen and (max-device-width: 480px) {
+  .add-item-input {
+    font-size: 300%;
+    width: 70%;
+  }
+}
+
+.add-item-button {
+  height: 20px;
+  width: 20px;
+  background-image: url("../grocery_list/plus_black.svg");
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media screen and (max-device-width: 480px) {
+  .add-item-button {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.create-new-grocery-list {
+  width: 300px;
+  height: 100px;
+  background-image: url("../grocery_list/plus.svg");
+  background-color: #0066bb;
+  color: white;
+  background-position: 20px center;
+  padding-left: 80px;
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  transition: all 0.2s;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-device-width: 480px) {
+  .create-new-grocery-list {
+    width: 100%;
+    margin-bottom: 40px;
+    font-size: 100%;
+  }
+}
+
+.grocery-list-hud {
+  width: 300px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  font-family: "Reem Kufi";
+  margin-bottom: 20px;
+}
+@media screen and (max-device-width: 480px) {
+  .grocery-list-hud {
+    width: 90%;
+    margin-bottom: 40px;
+    font-size: 200%;
+  }
+}
+
+.create-new-grocery-list:hover {
+  cursor: pointer;
+  background-size: 60px 60px;
+  background-position: 10px center;
+}
+
+.consent-button {
+  margin-top: 18px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  border-radius: 5px;
+  background-color: #0066bb;
+  color: white;
+  box-sizing: border-box;
+  border: 3px solid #0066bb;
+}
+
+.consent-button:hover {
+  cursor: pointer;
+  border: 3px solid black;
+}
+
+/*# sourceMappingURL=grocery_list.css.map */

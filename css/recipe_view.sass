@@ -1,0 +1,212 @@
+.ad-banner
+	margin-left: 50%
+	transform: translateX(-50%)
+	margin-top: $header-height + 20px
+	width: $recipe-width
+	@media screen and (max-device-width: $break-mobile)
+		margin-top: $header-height-mobile + 40px
+
+.recipe-horizontal
+	display: flex
+	width: $recipe-width + $amazon-button-width * 2 + 20px
+	margin-left: 50%
+	transform: translateX(-50%)
+	padding-top: 20px
+	@media screen and (max-device-width: $break-mobile)
+		padding-top: 0
+
+.recipe-content
+	width: $recipe-width
+/*	height: 100%
+/*	overflow-x: scroll
+
+.recipe-header
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	width: $recipe-width
+	flex-wrap: wrap
+	margin-top: 20px
+
+.recipe-tombstone	
+	font-family: 'reem kufi'
+	width: 100%
+	margin-bottom: 10px
+	border-bottom: 4px solid $ui-color-blue
+	padding-bottom: 10px
+	padding-left: 20px
+	padding-right: 20px
+
+.metadata
+	display: flex
+	justify-content: space-between
+	flex-direction: row
+	flex-wrap: nowrap
+
+.recipe-yield
+	text-align: right
+	
+.recipe-yield > p,
+.recipe-timing > p
+	white-space: pre
+
+.recipe-name
+	font-size: 150%
+
+.recipe
+	width: $recipe-width
+	padding: $recipe-outer-padding
+	border-top: 20px solid crimson
+	border-radius: 10px
+	font-size: 82%
+	background-color: white
+	margin-top: 10px
+
+.material
+	width: $recipe-mtl-width
+	display: flex
+	
+.material.in-fridge
+	font-weight: 700
+
+.material:not(:first-child)
+	margin-top: 4px
+
+.amt-quantity-input
+	font-size: 90%
+	flex: 0 0 $recipe-qty-width
+	width: $recipe-qty-width
+	height: 16px
+	align-self: center
+	@media screen and (max-device-width: $break-mobile)
+		height: 32px
+		flex: 0 0 $recipe-qty-width-mobile
+		width: $recipe-qty-width-mobile
+
+.amt-measure
+	flex: 0 0 $recipe-msr-width
+	width: $recipe-msr-width
+	margin-left: $recipe-mtl-padding
+	align-self: center
+	@media screen and (max-device-width: $break-mobile)
+		flex: 0 0 $recipe-msr-width-mobile
+		width: $recipe-msr-width-mobile
+		margin-left: $recipe-mtl-padding-mobile
+
+.recipe-column.ingredient
+	flex: 0 0 $recipe-ing-width
+	width: $recipe-ing-width
+	margin-left: $recipe-mtl-padding
+	@media screen and (max-device-width: $break-mobile)
+		flex: 0 0 $recipe-ing-width-mobile
+		width: $recipe-ing-width-mobile
+		margin-left: $recipe-mtl-padding-mobile
+
+.recipe *
+	font-family: 'source sans pro'
+
+.amt-measure,
+.recipe-column.ingredient
+	display: inline-block
+
+.step
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	justify-content: space-between
+
+.step:not(:first-child)
+	margin-top: 10px
+	border-top: 1px solid $ui-color-blue
+	padding-top: 10px
+
+.instructions
+	width: $recipe-inst-width
+	@media screen and (max-device-width: $break-mobile)
+		width: calc(100% - 350px - 10px)
+
+
+
+
+
+
+
+
+
+
+.equipment
+	width: 240px
+	margin-left: 20px
+	margin-top: 20px
+
+
+
+
+
+
+.similar-recipes
+	display: flex
+	flex-wrap: wrap
+	flex-direction: row
+	width: $recipe-width + $amazon-button-width * 2 + 20px
+	font-family: 'source sans pro'
+	margin-left: 50%
+	transform: translateX(-50%)
+	margin-bottom: 20px
+
+.similar-recipes > h2
+	width: 100%
+	text-align: left
+	margin-top: 20px
+	margin-bottom: 10px
+
+.recipe-link
+	width: $recipe-width / 2
+	color: $ui-color-blue
+	margin-bottom: 4px
+
+
+
+
+
+.recipe-description
+	font-family: 'source sans pro'
+	white-space: pre-line
+
+
+.macros-expander
+	z-index: 100000
+
+.macro-data-mini-text
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	justify-content: space-between
+
+.macro-data-mini-text > p:first-child
+	margin-right: 8px
+
+.thickest-bottom-border
+	width: 100%
+	border-bottom: 6px solid black
+	
+.thick-bottom-border
+	width: 100%
+	border-bottom: 4px solid black
+	
+.thin-bottom-border
+	width: 100%
+	border-bottom: 1.5px solid black
+	
+.thinnest-bottom-border
+	width: 100%
+	border-bottom: 1px solid black
+
+.indent
+	padding-left: 12px
+	
+.dietary-badges
+	width: 100px
+	
+.macro-wrapper
+	width: 170px

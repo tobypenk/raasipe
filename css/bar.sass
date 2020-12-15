@@ -1,0 +1,137 @@
+@import variables
+
+.bar
+	width: 620px
+	height: 400px
+	margin-left: 50%
+	transform: translateX(-50%)
+	background-color: white
+	border-radius: 10px
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	justify-content: space-between
+	padding: 10px
+	font-family: 'source sans pro'
+	@media screen and (max-device-width: $break-mobile)
+		width: 90%
+		margin-left: 5%
+		transform: none
+		font-size: 160%
+		height: 1000px
+	
+.bar > *
+	width: 50%
+	padding: 10px
+	
+.bar > :first-child
+	border-right: 4px solid black
+	
+.bar-search-inputs
+	border-bottom: 4px solid black
+	
+.bar-preset-search-inputs
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	justify-content: space-between
+	margin-bottom: 10px
+	
+.preset-pill
+	background-color: rgba(0,0,0,0.2)
+	border-radius: 3px
+	font-size: 80%
+	padding: 3px
+	@media screen and (max-device-width: $break-mobile)
+		padding: 6px
+		margin-top: 10px
+	
+.preset-pill:hover,
+.ingredient-option:hover,
+.saved-ingredient:hover
+	cursor: pointer
+	
+.bar-search-input
+	width: 100%
+	margin-bottom: 10px
+	font-family: 'source sans pro'
+	border: 1px solid rgba(0,0,0,0.2)
+	padding: 2px
+	outline: none
+	border-radius: 3px
+	font-size: 100%
+	
+.bar-search-wrapper
+	position: relative
+	
+.bar-search-results
+	position: absolute
+	width: 90%
+	margin-left: 5%
+	max-height: 160px
+	overflow-y: scroll
+	padding: 6px
+	pointer-events: none
+	@media screen and (max-device-width: $break-mobile)
+		max-height: 320px
+		width: 100%
+		margin-left: 0
+	
+.bar-search-results:not(:empty)
+	border-bottom: 1px solid grey
+	background-color: white
+	pointer-events: auto
+	
+.bar-search-selections,
+.bar-search-outputs
+	overflow-y: scroll
+		
+.bar-search-outputs
+	overflow-y: scroll
+	max-height: 330px
+	@media screen and (max-device-width: $break-mobile)
+		max-height: 850px
+		
+.bar-search-selections
+	overflow-y: scroll
+	max-height: 240px
+	@media screen and (max-device-width: $break-mobile)
+		max-height: 530px
+	
+.recipe-result
+	width: 100%
+	
+.disappearing-text
+	font-size: 75%
+	font-style: italic
+
+.disappearing-text-basis:not(:empty) ~ .disappearing-text
+	display: none
+	
+tr > :first-child
+	width: 80%
+	
+tr > :nth-child(2)
+	width: 20%
+	text-align: right
+	
+td
+	@media screen and (max-device-width: $break-mobile)
+		font-size: 180%
+	
+	
+.ingredient-option.on-deck
+	background-color: rgba(0,0,0,0.2)
+	
+
+
+
+.footer
+	position: fixed
+	top: 100%
+	transform: translateY(-100%)
+
+
+
+
+	

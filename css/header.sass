@@ -1,0 +1,37 @@
+.header
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	padding-left: 40px
+	padding-right: 40px
+	align-items: center
+	position: fixed
+	top: 0
+	width: 100%
+	height: $header-height
+	border-bottom: 4px solid crimson
+	background-color: white
+	z-index: 10000
+	@media screen and (max-device-width: $break-mobile)
+		height: $header-height-mobile
+		padding-left: 80px
+		padding-right: 80px
+		border-bottom: 8px solid crimson
+
+.raasipe-logo
+	background-image: url("../ui_icons/raasipe.svg")
+	height: 30px
+	width: 30px
+	background-size: contain
+	background-position: center center
+	background-repeat: no-repeat
+	@media screen and (max-device-width: $break-mobile)
+		height: 50px
+		width: 50px
+
+.header-item
+	color: black
+	font-family: 'reem kufi'
+	font-size: 120%
+	display: flex
+	align-items: center

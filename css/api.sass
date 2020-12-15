@@ -1,0 +1,276 @@
+.api-header
+	top: $header-height
+	width: 100%
+	display: flex
+	flex-direction: row
+	justify-content: flex-end
+	position: fixed
+	z-index: 100000
+	@media screen and (max-device-width: $break-mobile)
+		top: $header-height-mobile
+	
+.api-menu-button
+	width: $header-height * 1.618
+	height: $header-height
+	background-color: black
+	background-size: 68% 68%
+	background-position: center center
+	background-repeat: no-repeat
+	border-bottom-left-radius: 5px
+	border-bottom-right-radius: 5px
+	
+pre.json
+	white-space: pre-wrap
+	
+.api-menu-button:hover
+	cursor: pointer
+	background-color: white
+	
+.api-menu-button.nutrition
+	background-image: url("../ui_icons/api_nutrition_white.svg")
+	
+.api-menu-button.query
+	background-image: url("../ui_icons/api_query_white.svg")
+	
+.api-menu-button.nutrition:hover
+	background-image: url("../ui_icons/api_nutrition_black.svg")
+	
+.api-menu-button.query:hover
+	background-image: url("../ui_icons/api_query_black.svg")
+	
+.api-section:not(:first-child)
+	margin-top: 30px
+	
+.api-sections
+	width: $recipe-width
+	margin-left: 50%
+	transform: translateX(-50%)
+	margin-bottom: 20px
+	
+.api-sections h1,
+.api-sections h2,
+.api-sections h3
+	font-family: 'source sans pro'
+
+.api-sections h2
+	margin-top: 30px
+
+.api-sections h3
+	margin-top: 20px
+
+.inline-tool
+	height: 160px
+	width: 100%
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	margin-top: 10px
+
+.inline-textarea
+	width: 65%
+	height: 100%
+	border: none
+	border-radius: 10px
+	padding: 10px
+	font-family: 'reem kufi'
+	font-size: 110%
+	
+.api-button
+	width: 100px
+	height: 100px
+	background-color: $ui-color-blue
+	border-radius: 10px
+	display: flex
+	justify-content: center
+	text-align: center
+	align-items: center
+	font-size: 140%
+	font-family: 'source sans pro'
+	@media screen and (max-device-width: $break-mobile)
+		width: 200px
+		height: 200px
+	
+.api-button:hover
+	cursor: pointer
+	color: white
+	
+
+
+.recipe-qualities
+	width: 100%
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	flex-wrap: wrap
+
+.recipe-qualities > .dietary-result
+	width: 19.5%
+	font-size: 70%
+
+	
+.dietary-result
+	width: 86px
+	border-radius: 4px
+	padding: 2px
+	color: white
+	margin-top: 4px
+	
+.dietary-result:not(.offender)
+	background-color: $ui-color-blue
+	
+.dietary-result.offender
+	background-color: crimson
+	
+.inline-analysis-header
+	margin-top: 20px
+	
+.inline-analysis-results-header
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	
+.inline-analysis-results-dietary
+	width: 55%
+
+.inline-analysis-results-macros
+	width: 40%
+	
+.inline-analysis-results-dietary
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	justify-content: space-between
+	
+.dietary-result
+	width: 30%
+	font-family: 'source sans pro'
+	
+.macros-values,
+.macros-header
+	width: 100%
+	height: 30px
+	font-family: 'source sans pro'
+	display: flex
+	align-items: center
+	text-align: center
+	
+.macros-values
+	margin-top: 4px
+	
+.macros-slider
+	display: flex
+	align-items: center
+	align-content: center
+	justify-content: center
+	
+	
+	
+	
+.macros-header .macros-slider.protein
+	background-color: rgba(0,0,0,0)
+	color: crimson
+
+.macros-header .macros-slider.fat
+	background-color: rgba(0,0,0,0)
+	color: rgb(230,200,20)
+
+.macros-header .macros-slider.carbs
+	background-color: rgba(0,0,0,0)
+	color: brown
+
+.macros-calories
+	font-family: 'source sans pro'
+	font-size: 120%
+	
+.ingredient-result,
+.recipe-result,
+.related-result
+	font-family: 'source sans pro'
+	display: flex
+	
+.recipe-result,
+.related-result
+	margin-top: 10px
+	
+.ingredient-result:not(:first-child)
+	margin-top: 4px
+	
+.ingredient-result:first-child,
+.recipe-result:first-child,
+.related-result:first-child
+	border-bottom: 4px solid $ui-color-blue
+	padding-bottom: 4px
+	
+.ingredient-result-component.amount
+	width: 64px
+	
+.ingredient-result-component.measure-id
+	width: 64px
+	
+.ingredient-result-component.name
+	width: 160px
+
+.recipe-result-component.name
+	width: 240px
+	margin-right: 10px
+	
+.recipe-result-component.yield
+	width: 160px
+	
+.inline-analysis-results
+	max-height: 300px
+	overflow-y: scroll
+	
+.inline-analysis-ingredients
+	margin-top: 20px
+	margin-bottom: 20px
+	
+.ingredient-result-component.calories,
+.ingredient-result-component.protein,
+.ingredient-result-component.fat,
+.ingredient-result-component.carbs,
+.ingredient-result-component.preparation,
+.ingredient-result-component.variety
+	width: 100px
+	
+.recipe-result-component.carbs,
+.recipe-result-component.fat,
+.recipe-result-component.protein,
+.recipe-result-component.calories
+	width: 80px
+	
+.related-result-component.name
+	width: 360px
+	
+.related-result-component.course
+	width: 160px
+	
+.related-result-component.id
+	width: 100px	
+	
+	
+.return-object-example
+	background-color: rgb(235,235,235)
+	border-radius: 10px
+	padding: 10px
+	background-image: url("../ui_icons/open_menu.svg")
+	background-size: 60px 60px
+	background-repeat: no-repeat
+	background-position: calc(100% - 10px) 10px
+	max-height: 80px
+	overflow: hidden
+	margin-top: 10px
+	
+.return-object-example.expanded
+	max-height: none
+	
+.return-object-example:hover
+	cursor: pointer
+	
+	
+
+	
+	
+	
+	
+	

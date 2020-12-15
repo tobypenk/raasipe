@@ -1,0 +1,57 @@
+@import variables
+
+@import recipe_view
+@import recipe_header
+@import header
+@import footer
+@import search
+@import slider
+@import home
+@import api
+@import palette
+@import projects
+@import sunburst
+@import nutrition_analysis
+@import hunger
+@import print
+
+*
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+	text-decoration: none
+	
+html, body
+	height: calc(100%)
+	
+body
+	padding-top: $header-height + 20px
+	@media screen and (max-device-width: $break-mobile)
+		font-size: 180%
+
+h2
+	font-family: 'reem kufi'
+	font-size: 130%
+
+body
+	background-image: url("../images/main/upfeathers.png")
+
+.ul
+	text-decoration: underline
+
+.nn-interface
+	margin-bottom: 20px
+	@media screen and (max-device-width: 480px)
+		font-size: 70%
+	
+.nn-epoch > p,
+.nn-refresh > p
+	width: 100%
+	text-align: center
+	@media screen and (max-device-width: 480px)
+		font-size: 80%
+
+.preamble
+	max-width: 560px
+	@media screen and (max-device-width: 480px)
+		width: 90%

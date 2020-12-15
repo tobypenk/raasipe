@@ -1,0 +1,88 @@
+.switch 
+  position: relative
+  display: inline-block
+  width: 40px
+  height: 20px
+  margin-right: 10px
+  @media screen and (max-device-width: $break-mobile)
+    width: 80px
+    height: 40px
+    margin-right: 20px
+
+.switch input 
+  opacity: 0
+  width: 0
+  height: 0
+
+.slider 
+  position: absolute
+  cursor: pointer
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background-color: #ccc
+  -webkit-transition: .4s
+  transition: .4s
+
+.slider:before 
+  position: absolute
+  content: ""
+  height: 14px
+  width: 14px
+  left: 3px
+  bottom: 3px
+  background-color: white
+  -webkit-transition: .15s
+  transition: .15s
+  @media screen and (max-device-width: $break-mobile)
+    height: 28px
+    width: 28px
+    left: 6px
+    bottom: 6px
+
+input:checked + .slider 
+  background-color: #2196F3
+
+input:focus + .slider 
+  box-shadow: 0 0 1px #2196F3
+
+input:checked + .slider:before 
+  -webkit-transform: translateX(20px)
+  -ms-transform: translateX(20px)
+  transform: translateX(20px)
+  @media screen and (max-device-width: $break-mobile)
+    -webkit-transform: translateX(40px)
+    -ms-transform: translateX(40px)
+    transform: translateX(40px)
+
+.slider.round 
+  border-radius: 34px
+
+.slider.round:before
+  border-radius: 50%
+
+.slider-wrapper
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  width: 18%
+  justify-content: flex-start
+  font-family: 'source sans pro'
+  font-size: 85%
+  margin-bottom: 4px
+  margin-top: 4px
+  @media screen and (max-device-width: $break-mobile)
+    margin-bottom: 4px
+    margin-top: 4px
+    width: 50%
+
+.course-ui .slider-wrapper
+  width: 15%
+  @media screen and (max-device-width: $break-mobile)
+    width: 50%
+
+
+
+
+

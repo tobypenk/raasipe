@@ -1,0 +1,37 @@
+.home-tag-cards
+	width: $recipe-width
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	margin-top: 20px
+	justify-content: space-between
+	margin-left: 50%
+	transform: translateX(-50%)
+	@media screen and (max-device-width: $break-mobile)
+		width: $recipe-width-mobile
+		margin-top: 40px
+	
+.banner-headline
+	width: 80%
+	text-align: center
+	font-family: 'reem kufi'
+	transform: translateX(-50%)
+	margin-left: 50%
+	@media screen and (max-device-width: $break-mobile)
+		width: $recipe-width-mobile
+	
+	
+.home-tag-card
+	width: $recipe-width / 2 - 10px
+	border-top: 4px solid $ui-color-blue
+	margin-bottom: 20px
+	@media screen and (max-device-width: $break-mobile)
+		width: calc(90% / 2 - 20px)
+		border-top: 8px solid $ui-color-blue
+		margin-bottom: 40px
+	
+.home-tag-card > a
+	width: 100%
+	display: inline-block
+	color: black
+	font-family: 'source sans pro'
