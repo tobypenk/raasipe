@@ -1,1 +1,6 @@
-php/db_credentials.php
+php/libraries/db_credentials.php
+php/services/email_credentials.php
+php/services/text_credentials.php
+*deprecated*
+*DS_STORE*
+processors/process.R
