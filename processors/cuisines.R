@@ -34,13 +34,13 @@ recipes <- execute_query(paste0(
   " from recipe r join step s on s.recipe_id = r.id ",
   " join material m on m.step_id = s.id",
   " join ingredient i on m.ingredient_id = i.id",
-  " where origin is not null and origin not in ('ancient');"
+  " where origin is not null and origin not in ('ancient','africa');"
 ))
 
 df <- data.frame(cuisine=c(1),ingredient_string=c(1))
 for (r in unique(recipes$recipe)) {
   tmp_df <- subset(recipes,recipe==r)
-  tmp_df$cuisine = cuisines_map[tmp_df$cuisine]
+  #tmp_df$cuisine = cuisines_map[tmp_df$cuisine]
   df <- rbind(df,c(tmp_df[1,"cuisine"],paste0(tmp_df$ingredient,collapse=" ")))
 }
 
