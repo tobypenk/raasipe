@@ -5,9 +5,8 @@
 		
 	open_connection();
 	$l = execute_query("select * from grocery_list where id = ".$list_id.";");
-	$r = execute_query("select * from grocery_list_item where list_id = ".$list_id." order by entry;");
+	$r = execute_query("select * from grocery_list_item where list_id = ".$list_id." order by supermarket_section, entry;");
 	close_connection();
-	
 	
 	$html = $user_lists_html;
 	
@@ -37,5 +36,4 @@
 	} else {
 		echo $html;
 	}
-	
 ?>

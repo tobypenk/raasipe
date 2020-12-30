@@ -9,20 +9,28 @@
 		<script src="../js/jquerylib.js"></script>
 		
 		<?php include "../html_templates/google_analytics.html"; ?>
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
 		
 		<title>RaaSipe | Grocery list</title>
 	</head>
 	<body>
 		
-		<?php include "../html_templates/header.html"; ?>
+		<?php 
+			include "../html_templates/header.html"; 
+		?>
 		
 		<div class='main-content'>
-			<div class='content-holder'>
-				<?php include "session_checker.php";?>
-			</div>
+			
+			<!--<div class='body-expander'>x</div>-->
+			
+			<div class='content-holder'><?php include "session_checker.php";?></div>
+					
+			
 		</div>
 		
-		<?php include "../html_templates/footer.html"; ?>
+		<?php 
+			include "../html_templates/footer.html"; 
+		?>
 		
 	</body>
 	
@@ -30,30 +38,6 @@
 </html>
 
 <script>
-	
-	
-	
-	function guess_ingredient(ing) {
-		// UNFINISHED
-		$.ajax({
-			url: "../add_recipe/php/services/extract_ingredient.php",
-			method: "GET",
-			data: {"ingredient_list": ing, "ajax_ingredients_only": 1, "ajax": 1},
-			success: function(e) {
-				console.log(e);
-				e = JSON.parse(e);
-				console.log(e);
-				$(".inline-analysis-header").html(e.html.header);
-				$(".inline-analysis-ingredients").html(e.html.ingredients);
-			}
-		});
-	}
-	
-	
-	
-	
-	
-	
 	
 	var list_active = false;
 	
@@ -91,6 +75,38 @@
 		});
 	});
 	
+	function guess_ingredient(ing) {
+		
+		$.ajax({
+			url: "../add_recipe/php/services/extract_ingredient.php",
+			method: "GET",
+			data: {"ingredient_list": ing, "ajax_ingredients_only": 1, "ajax": 1},
+			success: function(e) {
+				console.log(e);
+				e = JSON.parse(e);
+				console.log(e);
+				$(".inline-analysis-header").html(e.html.header);
+				$(".inline-analysis-ingredients").html(e.html.ingredients);
+			}
+		});
+	}
+	
+	function guess_ingredient_v2(ing) {
+		
+		$.ajax({
+			url: "php/services/guess_ingredient.php",
+			method: "GET",
+			data: {"ingredient_list": ing, "ajax_ingredients_only": 1},
+			success: function(e) {
+				console.log(e);
+				e = JSON.parse(e);
+				console.log(e);
+				$(".inline-analysis-header").html(e.html.header);
+				$(".inline-analysis-ingredients").html(e.html.ingredients);
+			}
+		});
+	}
+	
 	function update_list_url(list_id) {
 		
 		var s = parse_window_search(),
@@ -124,6 +140,9 @@
 	    	s;
 	    
 	    console.log(newurl);	
+		//if (history.pushState) {
+		//    window.history.pushState({path:newurl},'',newurl);
+		//}
 		window.location.href = newurl;
 	}
 	
@@ -149,25 +168,50 @@
 			data: {list_id: list_id, ajax: true},
 			success: function(e) {
 				e = JSON.parse(e);
-				//console.log(e);
 				if (!list_active) $(".content-holder").html(e.html);
 				list_active = true;
 				$(".list-items").html("");
 				
-				for (i in e.data) {
-					$(".list-items").append(create_grocery_list_html(e.data[i]));
+				var supermarket_sections = [], i, j, this_section;
+				for (var i in e.data) {
+					supermarket_sections.push(e.data[i].supermarket_section);
 				}
+				
+				supermarket_sections = supermarket_sections.filter(function (value, index, self) {
+					return self.indexOf(value) === index;
+				});
+				
+				for (i in supermarket_sections) {
+					this_section = e.data.filter(function(x) {return x.supermarket_section == supermarket_sections[i];});
+					$(".list-items").append(create_grocery_list_header(supermarket_sections[i]));
+					
+					for (j in this_section) {
+						$(".list-items").append(create_grocery_list_html(this_section[j]));
+					}
+				}
+				
+				
 			}
 		});
+	}
+	
+	function create_grocery_list_header(s) {
+		var html = $(
+			"<h3 class='supermarket-section-header'>"+
+				s+
+			"</h3>"
+		);
+		
+		return html;
 	}
 	
 	function create_grocery_list_html(l) {
 		var html = $(
 			"<div class='list-item'>"+
-				"<div class='remove-item'>"+
+				"<div class='remove-item' data-list-item-id='"+l.id+"'>"+
 				"</div>"+
 				"<p>"+
-					l.entry+
+					l.guess+
 				"</p>"+
 			"</div>"
 		);
@@ -199,8 +243,6 @@
 		var val = $(".add-item-input").val(),
 			list_id = $(".grocery-list").attr("data-list-id");
 		
-		console.log(val,list_id);
-		
 		$.ajax({
 			method: "GET",
 			url: "add_grocery_list_item.php",
@@ -220,7 +262,7 @@
 	});
 	
 	$(document).on("click",".remove-item",function() {
-		var val = $(this).siblings("p").html(),
+		var val = $(this).attr("data-list-item-id"),
 			list_id = $(".grocery-list").attr("data-list-id");
 			
 		$.ajax({
@@ -254,3 +296,15 @@
 	});
 	
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
