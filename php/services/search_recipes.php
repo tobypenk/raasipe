@@ -167,7 +167,10 @@
 
 	open_connection();
 	$connect = chained_interval();
-	if (isset($_GET["search_string"])) view_instantiation($open_view);
+	if (isset($_GET["search_string"])) {
+		view_instantiation($open_view);
+		execute_insertion("insert into user_search (search_string) values ('".urlencode($_GET["search_string"])."');");
+	}
 	$search_result = execute_query($search_query);
 	$execute = chained_interval();
 	close_connection();

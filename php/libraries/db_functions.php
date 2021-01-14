@@ -4,7 +4,7 @@
 
 		global $conn;
 
-		include "credentials.php";
+		include "db_credentials.php";
 
         $conn = new mysqli($host,$user,$pass,$dbname,$port);
 
